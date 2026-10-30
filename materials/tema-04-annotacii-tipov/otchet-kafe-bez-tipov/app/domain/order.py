@@ -8,7 +8,7 @@ class Order:
     waiter: str
     kopeks: int
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         if self.kopeks < 0:
             raise ValueError("Сумма заказа не может быть отрицательной")
         object.__setattr__(self, "waiter", normalize_name(self.waiter))
